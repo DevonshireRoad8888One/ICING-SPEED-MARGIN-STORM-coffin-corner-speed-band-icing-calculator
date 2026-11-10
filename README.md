@@ -118,7 +118,61 @@ suite found in the suite's own new code — is in `docs/case-notes.md` §11 and 
 | v2.6 | 83 | v2.5 | **yes — 82/83, 2026-11-10** | superseded — one guard failed |
 | **v2.6 r1** | **83** | v2.6 | **yes — 83/83, 2026-11-10** | **RELEASED** |
 
----
+---Zulu 7, Sierra 7 — good catch, and the answer is: the green is correct, but it is worth understanding exactly what it is asserting.
+
+1. First, a correction of the premise: the table itself is not green
+In the Speed-envelope comparison table, the highlighted Stall margin row is tinted blue, not green. The green you are seeing belongs to the speed-band indicator immediately above that table — the green span of the track — and it appears in three other places on the ENVELOPE tab 
+v2.6 r1 - Storm...7 (1).html
+:
+
+WHERE
+WHAT IS GREEN
+WHAT IT ASSERTS
+Track, the green span
+the buffered interval
+the current EAS sits inside both of your buffers
+Verdict tile
+WITHIN THE USER BUFFER
+the same statement, in words
+Result tile — Stall margin 38.9 kt
+the margin number
+margin ≥ your 10 kt buffer
+Result tile — Policy window 34.9 kt
+the window number
+the buffered band is open
+
+
+All four are one single claim: your 242.4 kt EAS is above the floor of 213.5 kt and below the ceiling of 248.4 kt — so the margin is +38.9 kt and the window is 34.9 kt. Nothing else.
+
+2. Why this is not a false green
+Because the green is a qualified statement, and the qualification is printed in the same block. The row directly above the highlighted one says what the buffers are; the banner above that says these are user-defined study values, not approved operating margins and not regulatory limits 
+v2.6 r1 - Storm...7 (1).html
+.
+
+So read it in this order:
+
+green → relative to thresholds you typed yourself — an arithmetic comparison.
+amber stamp → can these numbers be trusted as certified performance? — an evidence judgement.
+
+Those are two different questions about the same card, and v2.6 deliberately kept them on separate channels. That separation is the deployment review: the build stamp reports the software, the input-state stamp reports the evidence, and the colours in the Result card report the comparison you asked for.
+
+The rule you had me enforce is intact. With the shipped ILLUSTRATIVE presets the build stamp is amber, never green, and the input-state stamp is amber too. The green belongs to the arithmetic, not to the build. If the stamp could turn green here, that would be the defect — and it cannot.
+
+3. The one thing I would flag, because it is a judgement call and not physics
+In one visual field, green means "good" to most readers. A quick glance at a green 38.9 kt sitting beside an amber stamp can read as an operational clearance, even though every string around it qualifies it. The v2.6 review fixed the words on the track — SAFE → BUFFERED, DANGER → OUTSIDE BAND — but left the colour on the verdict tile and the two Result numbers untouched.
+
+That was deliberate: the arithmetic is sound, the evidence warning lives in its own channel, and making every number amber in the default preset would blur the signal. But it is a choice, not a law.
+
+If you want colour to track evidence as well, the change is small and surgical: make the verdict tile and the Stall margin / Policy window tiles amber instead of green whenever the selected configuration's tier is not CERTIFIED or TYPE-DATA. Green then becomes a positive claim about documented data — reachable only with a certified stall reference — and it costs one line in renderEnv() plus one guard test.
+
+Say the word and I will write it as v2.7, with the guard, and with the correction-log entry. It is a five-minute change to the code and it is the only remaining place where the tool's colour vocabulary is looser than its wording.
+
+4. Nothing regressed
+This behaviour is identical in the browser-verified build of 10 November and in the published v2.6 r1. The √σ fix changed one cell in the atmosphere table — 686.9 → 373.9 kt — and touched no colour logic. The figures you are reading now, 203.5 / 258.4 / 213.5 / 248.4 / M0.6693 / M0.7786 / 242.4 / 38.9 / 34.9, are the ones that were independently re-derived and reconciled before release.
+
+Short answer: the green means inside your own buffers, the amber means not certified data, and both are correct at the same time. If the green on the numbers still bothers you, the one-line v2.7 above makes green mean certified — which is the stricter, more honest arrangement, and the one I would prefer if this tool is ever handed to a student who has not yet internalised the distinction between a green number and an approved one.
+
+Sierra 7 out.
 
 ## v2.1 — the root correction
 
