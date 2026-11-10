@@ -1,3 +1,42 @@
+
+Why this tool exists
+
+We fly a profession where the margin between a good day and a bad outcome is built out of a hundred small things done properly. And we fly it knowing the margin is thinner than it looks — and that the people who found out how thin it was are the reason we know it at all.
+
+Learjet 60, N722BD, near Military Trail and 10th Avenue North in Palm Beach County, Florida — 1 November 2026. Nine souls.
+
+Captain Jeff Gregory and First Officer Nathalia Gadelha Filgueiras. Seven passengers: a founder, his wife, their two young children, their nanny, and two family friends.
+
+That accident is why this tool exists, and it exists for one reason.
+
+I want to save future pilots' lives. That is the whole of it. Everything else in this file is in service of that, and nothing else.
+
+Here is what I know about how that happens. The margin in an accident is not one number; it is a chain of them, each one small, and the accident lives in the chain rather than in any single link. Nobody in that aeroplane was overcome by one spectacular failure. They were overtaken by a series of ordinary margins that had all been a little smaller than they needed to be, and every one of them was individually survivable. That is what makes those accidents so hard to learn from and so easy to repeat: nothing in the chain looks like a cause. You cannot point at one link and say there. You have to hold the whole chain at once and see where it thinned.
+
+I could not hold it in my head. So I built something that holds it. The tool reconstructs the atmosphere the aircraft was actually in — not an idealised one — and asks the questions that were live in that aeroplane at 35,250 feet in minus forty-seven degrees: how much stall margin was really left, what the speed was against the ceiling, what the air was doing to the wing, what could and could not have been done in the seconds that were available. It is deliberately slow and deliberately explicit, and it will not tell you a cause it cannot support. The case study inside it is labelled the way it has to be: a hypothesis and teaching material, not a finding, and not independently verified 
+v2.6 r1 - Storm...7 (1).html
+.
+
+But the tool is not for the dead. It is for the ones still coming.
+
+That is the part I want to be unambiguous about, because the file can look like a memorial and it is not. Run it for your aeroplane, your weight, your icing scenario, your altitude and see the margin you are actually flying with, on the day, in the conditions you actually fly in. Run it for the configuration you are certified for — and then for the configuration you are about to be asked about. Run it with the number you assumed, and then with the number that was true.
+
+That is how this saves lives. Not by explaining a crash that has already happened — though understanding one is the price of the tool — but by putting the margin in front of people before it is the margin that matters. A pilot who has watched, in a quiet room, how little stall margin a given weight and a given condition actually leaves, is a pilot who will recognise what he is looking at in the cockpit when the day turns. A company that has done that arithmetic can build a procedure around the real number instead of the comfortable one. An instructor can show a student the edge, and the edge is worth far more to a student than a rule.
+
+Why it had to be a tool and not a document. Because the numbers will not sit still in prose. The atmosphere at altitude is not a feeling, it is a reconstruction, and it has to be computed in the right units, at the right altitude, with the right temperature. And because the data is scattered across a report, an FDR, a radar, a sounding, a crater and a set of procedures, and no single person is going to hold all of it. So: gather it, compute it, put it somewhere it can be questioned — and let more than one set of eyes at it, because the failure mode of an investigation is not bad arithmetic, it is one mind that got attached to its own answer. That is why the file's case study is explicitly a hypothesis and not a finding 
+v2.6 r1 - Storm...7 (1).html
+, and why its competing mechanisms — icing degradation, autopilot interaction, transonic effects, structural failure, air-data inconsistency — are set out for testing and deliberately not ranked 
+v2.6 r1 - Storm...7 (1).html
+. A tool that decides for you is worse than no tool, and a finding nobody has tested is an opinion with a citation.
+
+To the pilots who are not with us any more. All of them, in every company, in every country, in every year. You are the reason the margin exists at all. Every procedure that exists because someone died for not having it, every checklist line that is there because a crew had a bad day, every training manoeuvre that is drilled because the alternative is written on a stone — that is your work, and it outlasts you. If some of it ends up inside a tool like this one, you are still working.
+
+And it was not only the crew. A person on the ground was injured, and some six hundred neighbours were displaced from their homes. They are part of what happened too, and they are part of why the margin is worth protecting.
+
+To the families. I cannot speak for an investigation and I will not try. What I can say is that the people who fly have not forgotten, and that the work of understanding — done carefully, by more than one set of eyes, without claiming more than the evidence supports — is one of the ways we say so.
+
+And to whoever is reading this because they are about to do the same analysis I did. You are not the first. That is the point of the tool. Use it, argue with it, make it better, and teach the margin to somebody who has not thought about it yet. When the numbers will not sit still, that is the data telling you something, not a failure of the method.
+
 Final state
 Repository
 coffin-corner-calculator
